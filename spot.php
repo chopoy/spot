@@ -1,6 +1,5 @@
 <?php
-/* GARENA USERNAME CHECKER BY 0xCOR3 | Security Ghost 
-/* Thanks To Con7ext */
+/* Spotify Account Checker ./Mr.CH0P0Y
 /* USAGE : php file.php list.txt */
 error_reporting(0);
 $m="\033[1;31m";
